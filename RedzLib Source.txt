@@ -896,47 +896,6 @@ local UIScale = ViewportSize.Y / 450
 local Settings = redzlib.Settings
 local Flags = redzlib.Flags
 
-local FieldScreen = Instance.new("ScreenGui")
-FieldScreen.DisplayOrder = 100
-FieldScreen.ScreenInsets = Enum.ScreenInsets.DeviceSafeInsets
-FieldScreen.Name = "Uni" .. tostring(math.random(1000,9999))
-FieldScreen.Parent = gethui and gethui() or game:GetService("CoreGui")
-
-local UniButton = Instance.new("ImageLabel")
-UniButton.Name = "UniButton"
-UniButton.Image = "rbxthumb://type=Asset&id=129748893691157&w=150&h=150"
-UniButton.Active = true
-UniButton.ZIndex = 10
-UniButton.Position = UDim2.new(0.8, 0, 0, 0)
-UniButton.BorderSizePixel = 0
-UniButton.BackgroundTransparency = 1
-UniButton.Size = UDim2.new(0, 42, 0, 42)
-UniButton.SizeConstraint = Enum.SizeConstraint.RelativeXY
-UniButton.Parent = FieldScreen
-
-local UniBoxButton = Instance.new("TextButton")
-UniBoxButton.Name = "UniBoxButton"
-UniBoxButton.ZIndex = 10
-UniBoxButton.AnchorPoint = Vector2.new(0.5, 0)
-UniBoxButton.Position = UDim2.new(0.5, 0, 0, 0)
-UniBoxButton.Size = UDim2.new(0, 42+21, 0, 42)
-UniBoxButton.BorderSizePixel = 0
-UniBoxButton.BackgroundTransparency = 1
-UniBoxButton.Text = ""
-UniBoxButton.SizeConstraint = Enum.SizeConstraint.RelativeXY
-UniBoxButton.Parent = UniButton
-
-redzlib.UniButton = UniButton
-
-local function CloseGUI()
-    if FieldScreen then
-        FieldScreen:Destroy()
-        redzlib.Connection:FireConnection("FlagsChanged", "UI Closed", true)
-    end
-end
-
-UniBoxButton.MouseButton1Click:Connect(CloseGUI)
-
 local SetProps, SetChildren, InsertTheme, Create do
 	InsertTheme = function(Instance, Type)
 		table.insert(redzlib.Instances, {
