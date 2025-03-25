@@ -905,10 +905,9 @@ FieldScreen.Parent = gethui and gethui() or game:GetService("CoreGui")
 local UniButton = Instance.new("ImageLabel")
 UniButton.Name = "UniButton"
 UniButton.Image = "rbxthumb://type=Asset&id=129748893691157&w=150&h=150"
-UniButton.Active = false
---UniButton.AnchorPoint = Vector2.new(0.5,0.5)
+UniButton.Active = true
 UniButton.ZIndex = 10
-UniButton.Position = UDim2.new(0.8,0,0,0)
+UniButton.Position = UDim2.new(0.8, 0, 0, 0)
 UniButton.BorderSizePixel = 0
 UniButton.BackgroundTransparency = 1
 UniButton.Size = UDim2.new(0, 42, 0, 42)
@@ -917,7 +916,6 @@ UniButton.Parent = FieldScreen
 
 local UniBoxButton = Instance.new("TextButton")
 UniBoxButton.Name = "UniBoxButton"
---UniBoxButton.AnchorPoint = Vector2.new(0.5,0.5)
 UniBoxButton.ZIndex = 10
 UniBoxButton.AnchorPoint = Vector2.new(0.5, 0)
 UniBoxButton.Position = UDim2.new(0.5, 0, 0, 0)
@@ -930,26 +928,14 @@ UniBoxButton.Parent = UniButton
 
 redzlib.UniButton = UniButton
 
-function redzlib:Destroy()
-	redzlib:Destroy()
-	FieldScreen:Destroy()
-	if KeyMainUI then KeyMainUI:Destroy() end
-	if KeyUI then KeyUI:Destroy() end
+local function CloseGUI()
+    if FieldScreen then
+        FieldScreen:Destroy()
+        redzlib.Connection:FireConnection("FlagsChanged", "UI Closed", true)
+    end
 end
 
-UniButtonClicked = function(name,inputState,inputObject)
-	if Debounce then return end
-	if Hidden then
-		Hidden = false
-		Unhide()
-	else
-		if not SearchHided then spawn(CloseSearch) end
-		Hidden = true
-		Hide()
-	end
-end
-
-UniBoxButton.MouseButton1Click:Connect(UniButtonClicked)
+UniBoxButton.MouseButton1Click:Connect(CloseGUI)
 
 local SetProps, SetChildren, InsertTheme, Create do
 	InsertTheme = function(Instance, Type)
