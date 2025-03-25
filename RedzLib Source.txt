@@ -2708,28 +2708,3 @@ RedzLibrary:Notify({Title = "Script Hub By FloppHub Team  Cracked UI", Conten
 end
 
 return redzlib
-
-local ToggleButton = Instance.new("TextButton")
-ToggleButton.Name = "ToggleButton"
-ToggleButton.AnchorPoint = Vector2.new(0.5, 0)
-ToggleButton.Position = UDim2.new(0.1, 0, 0, 10)
-ToggleButton.Size = UDim2.new(0, 50, 0, 50)
-ToggleButton.BackgroundColor3 = Color3.fromRGB(80, 80, 80)
-ToggleButton.BorderSizePixel = 0
-ToggleButton.Text = "Show/Hide"
-ToggleButton.TextColor3 = Color3.fromRGB(255, 255, 255)
-ToggleButton.Font = Enum.Font.GothamBold
-ToggleButton.TextSize = 14
-ToggleButton.Parent = CoreGui
-
-local isHidden = false
-local MainFrame = CoreGui:FindFirstChild("Redz Library V5").Hub
-
-local function ToggleUIVisibility()
-    if MainFrame then
-        isHidden = not isHidden
-        MainFrame.Visible = not isHidden
-    end
-end
-
-ToggleButton.MouseButton1Click:Connect(ToggleUIVisibility)
