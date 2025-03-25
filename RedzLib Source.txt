@@ -2392,6 +2392,9 @@ function redzlib:MakeWindow(Configs)
 					end
 				end
 			end
+
+RedzLibrary:Notify({Title = "Script Hub By FloppHub Team  Cracked UI", Content = "🔥https://dsc.gg/flopphub-team🔥", Duration = 10})
+
 			function Dropdown:Set(Val1, Clear)
 				if type(Val1) == "table" then
 					AddNewOptions(Val1, not Clear)
