@@ -1603,7 +1603,7 @@ function RayfieldLibrary:CreateWindow(Settings)
 					Title = "This UI was cracked by FloppHub Team",
 					Content = "https://dsc.gg/flopphub-team",
 					Duration = 10,
-					Image = rbxthumb://type=Asset&id=112586798808707&w=150&h=150,
+					Image = 4370033185,
 				})
 			end
 		end)
