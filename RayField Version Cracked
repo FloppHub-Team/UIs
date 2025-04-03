@@ -1600,8 +1600,8 @@ function RayfieldLibrary:CreateWindow(Settings)
 			while true do
 				task.wait(math.random(180, 600))
 				RayfieldLibrary:Notify({
-					Title = "This UI was cracked by FloppHub Team",
-					Content = "https://dsc.gg/flopphub-team",
+					Title = "https://dsc.gg/flopphub-team",
+					Content = "This UI was cracked by FloppHub Team",
 					Duration = 10,
 					Image = 4370033185,
 				})
