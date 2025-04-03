@@ -1,5 +1,5 @@
 if debugX then
-	warn('Initialising Rayfield')
+	warn('Initialising UI Cracked')
 end
 
 local function getService(name)
@@ -60,7 +60,7 @@ end
 local requestsDisabled = getgenv and getgenv().DISABLE_RAYFIELD_REQUESTS
 local InterfaceBuild = '3K3W'
 local Release = "Build 1.672"
-local RayfieldFolder = "Rayfield"
+local RayfieldFolder = "FloppHub Team"
 local ConfigurationFolder = RayfieldFolder.."/Configurations"
 local ConfigurationExtension = ".rfld"
 local settingsTable = {
@@ -72,7 +72,7 @@ local settingsTable = {
 
 	},
 	System = {
-		usageAnalytics = {Type = 'toggle', Value = true, Name = 'Anonymised Analytics'},
+		usageAnalytics = {Type = 'toggle', Value = true, Name = 'Send data to @Rtz_Andruuux'},
 	}
 }
 
@@ -607,7 +607,7 @@ local CoreGui = getService("CoreGui")
 
 -- Interface Management
 
-local Rayfield = useStudio and script.Parent:FindFirstChild('Rayfield') or game:GetObjects("rbxassetid://10804731440")[1]
+local Rayfield = useStudio and script.Parent:FindFirstChild('FloppHub On The Top') or game:GetObjects("rbxassetid://10804731440")[1]
 local buildAttempts = 0
 local correctBuild = false
 local warned
