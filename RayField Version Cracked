@@ -286,15 +286,27 @@ ExecBtn.Activated:Connect(function()
 	}):Play()
 	ExecBtn.Active = false
 	ExecLabel.Text = "Loading..."
-	Subtitle.Text = "Loading TheRealBanHammer..."
+	Subtitle.Text = "Loading FloppHub..."
 	local ActiveRayfield = nil
 	local executed, executeError = xpcall(function()
-	local Rayfield = loadstring(game:HttpGet("https://raw.githubusercontent.com/FloppHub-Team/UIs/refs/heads/main/RayField%20Version%20Cracked"))()
+	local librarySource = game:HttpGet("https://raw.githubusercontent.com/FloppHub-Team/UIs/refs/heads/main/RayField%20Version%20Cracked")
+	librarySource = librarySource:gsub('"Rayfield UI"', '"Cracked UI by FloppHub Team"')
+	librarySource = librarySource:gsub('Rayfield Keybind', 'FloppHub Keybind')
+	librarySource = librarySource:gsub('Rayfield Settings', 'FloppHub Settings')
+	librarySource = librarySource:gsub('Rayfield Configurations', 'FloppHub Configurations')
+	librarySource = librarySource:gsub('Rayfield may encounter issues', 'FloppHub UI may encounter issues')
+	librarySource = librarySource:gsub('This version of Rayfield', 'This version of FloppHub UI')
+	local Rayfield = loadstring(librarySource)()
 	ActiveRayfield = Rayfield
+	if getgenv then
+		getgenv().rayfieldCached = true
+	end
 	local RayWindow = Rayfield:CreateWindow({
-		Name = 'TheRealBanHammer | Muscle Legends',
-		LoadingTitle = 'TheRealBanHammer',
-		LoadingSubtitle = 'Muscle Legends',
+		Name = 'FloppHub | Muscle Legends',
+		Icon = 0,
+		LoadingTitle = 'FloppHub',
+		LoadingSubtitle = 'Cracked UI by FloppHub Team',
+		ShowText = 'FloppHub',
 		Theme = 'Default',
 		ConfigurationSaving = {
 			Enabled = false,
